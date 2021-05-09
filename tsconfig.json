@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "rootDir": "./ts",
+    "outDir": "./js",
+    "lib": ["ES2016"],
+    "target": "ES5",
+    "moduleResolution": "Node"
+  }
+}

@@ -12,7 +12,7 @@ The majority of functionality varies on if you use NodeJS, Vanilla JS or React, 
 
 _I mean how am I supposed to Inject a Stylesheet in a Terminal_
 
-Each function will have a `depends` field, which describes what functionality is required
+Each `@method` (and some `@class`es) will have a `depends` field, which describes what functionality is required
 
 > - if it says `@depends document`, it depends on `document` existing.
 > - `@depends nodemodule.chalk` would mean it depends on the nodejs module `chalk`
@@ -47,13 +47,31 @@ or both
 
 If the documentation states
 
-> ### Document.InjectCSS
+> ### document.injectCSS
+>
+> extendsPrototypes: N/A
+> noExtendedPrototypes: document.injectCSS
 >
 > ```js
 > /**
->  * @description Injects a Stylesheed into the Document
+>  * @description Injects a Stylesheet (CSS) into the Document
+>  *
+>  * @arg {string} CSS
+>  *
 >  * @method
+>  * @depends document
+>  * @requires anyBrowser, !ie, !operamini
 >  */
+>
+> document.injectCSS(`.scriptOnly {
+>   display:none
+> }`);
 > ```
 
+it means, the method `document.injectCSS` is described with `Injects a Stylesheet (CSS) into the Document`, takes an argument of type `string` named `CSS`, is a method, depends on `document`, and on any browser environment, but not an IE or Opera Mini environment, and is available under `document.injectCSS`
+
 ## Methods
+
+### document.injectCSS
+
+SOON&trade;
